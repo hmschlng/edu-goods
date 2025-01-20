@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package com.example.goods.service;
 
-import com.example.demo.dto.UserDto;
+import com.example.goods.dto.GoodsDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -16,20 +16,19 @@ import org.springframework.stereotype.Service;
  * 2025. 1. 12.        doong2s       최초 생성
  */
 @Service
-public class UserService {
+public class GoodsService {
 
     String appRunType;
 
-    public UserService(@Value("${app.run.type}") String appRunType) {
+    public GoodsService(@Value("${app.run.type}") String appRunType) {
         this.appRunType = appRunType;
     }
 
-    public UserDto getUserByuserNo(String userNo) {
+    public GoodsDto getGoodsByGoodsNo(String goodsNo) {
 
-        UserDto userDto = UserDto.builder()
-                .userNo(userNo)
-                .userName(appRunType + "-" + userNo)
+        return GoodsDto.builder()
+                .goodsNo(goodsNo)
+                .goodsName("goods-" + appRunType + "-" + goodsNo)
                 .build();
-        return userDto;
     }
 }

@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.goods.controller;
 
-import com.example.demo.dto.UserDto;
-import com.example.demo.service.UserService;
+import com.example.goods.dto.GoodsDto;
+import com.example.goods.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,14 +22,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/api/v1/user")
-public class UserRestController {
+public class GoodsRestController {
 
     @Autowired
-    private UserService userService;
+    private GoodsService goodsService;
 
-    @GetMapping("/{userNo}")
-    public ResponseEntity<UserDto> getUserByuserNo(@PathVariable String userNo) {
-        UserDto userDto = userService.getUserByuserNo(userNo);
-        return ResponseEntity.ok(userDto);
+    @GetMapping("/{goodsNo}")
+    public ResponseEntity<GoodsDto> getUserByuserNo(@PathVariable String goodsNo) {
+        GoodsDto goodsDto = goodsService.getGoodsByGoodsNo(goodsNo);
+        return ResponseEntity.ok(goodsDto);
     }
 }
