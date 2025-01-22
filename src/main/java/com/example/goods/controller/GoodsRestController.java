@@ -28,8 +28,12 @@ public class GoodsRestController {
     private GoodsService goodsService;
 
     @GetMapping("/{goodsNo}")
-    public ResponseEntity<GoodsDto> getUserByuserNo(@PathVariable String goodsNo) {
-        GoodsDto goodsDto = goodsService.getGoodsByGoodsNo(goodsNo);
-        return ResponseEntity.ok(goodsDto);
+    public ResponseEntity<GoodsDto> getGoods(@PathVariable String goodsNo) {
+
+        var goodsDto = goodsService.getGoodsByGoodsNo(goodsNo);
+
+        return ResponseEntity
+                .ok()
+                .body(goodsDto);
     }
 }
