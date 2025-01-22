@@ -1,6 +1,7 @@
 package com.example.goods.service;
 
 import com.example.goods.dto.GoodsDto;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +19,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class GoodsService {
 
-    String appRunType;
-
-    public GoodsService(@Value("${app.run.type}") String appRunType) {
-        this.appRunType = appRunType;
-    }
+    @Value("${app.run.type}")
+    private String appRunType;
 
     public GoodsDto getGoodsByGoodsNo(String goodsNo) {
 

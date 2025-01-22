@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  * 2025. 1. 12.        doong2s       최초 생성
  */
 @RestController
-@RequestMapping("/api/v1/user")
+@RequestMapping("/api/v1/goods")
 public class GoodsRestController {
 
     @Autowired
